@@ -92,11 +92,11 @@ together with AltGr produce the corresponding apl character in APLCHARS."
 (defconst dyalog-comment-regex
   "^\\s-*⍝")
 
-(defvar dyalog-ascii-chars "][<>+---=/¨~\\?*(){}&|.;"
+(defvar dyalog-ascii-chars "][<>+---=/~\\?*(){}&|.;"
   "APL symbols also present in ASCII.")
 
 (defvar dyalog-keyword-chars
-  "×≤≥≠∨∧÷∊⍴↑↓⍳○←→⌈⌊∘⍎⍕⊂⊃∩∪⊥⊤⍨⍒⍋⌽⍉⊖⍟⍱⍲⍬⌹≡≢⍪⌿⍀⍺⍵⎕⍞⋄⍷⍸⌷⍣⊣⊢⌶")
+  "×≤≥≠∨∧÷∊⍴↑↓⍳○←→⌈⌊∘⍎⍕⊂⊃∩∪⊥⊤⍨⍒⍋⌽⍉⊖⍟⍱⍲⍬⌹≡≢⍪⌿⍀⍺⍵⎕⍞⋄⍷⍸⌷⍣⊣⊢⌶¨⊆@⌺")
 
 (defvar dyalog-name  "[A-Za-z∆_]+[A-Za-z∆_0-9]*")
 
@@ -2240,7 +2240,8 @@ Optional argument LINE specifies which line to move point to."
 (defconst dyalog-symbol-help-names
   (let ((h (make-hash-table :test 'equal)))
     (dolist (e '(("&" . "Ampersand")
-                 ("]" ."Brackets")
+                 ("@" . "At")
+                 ("]" . "Brackets")
                  ("⊖" . "Circle Bar")
                  ("○" . "Circle")
                  ("⌽" . "Circle Stile")
@@ -2299,6 +2300,7 @@ Optional argument LINE specifies which line to move point to."
                  ("⍀" . "Slope Bar")
                  ("\\" . "Slope")
                  ("*" . "Star")
+                 ("⌺" . "Stencil")
                  ("|" . "Stile")
                  ("⍕" . "Thorn Symbol")
                  ("~" . "Tilde")
